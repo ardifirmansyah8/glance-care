@@ -1,4 +1,4 @@
-export interface Movies {
+export interface Movie {
   id: number;
   title: string;
   year: number;
@@ -20,7 +20,7 @@ export interface Movies {
   oscarNominations: number;
 }
 
-export const fetchMovies = async (): Promise<Movies[]> => {
+export const fetchMovies = async (): Promise<Movie[]> => {
   const response = await fetch("https://www.freetestapi.com/api/v1/movies");
   return await response.json();
 };

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
-import { type Movies, fetchMovies } from "@/apis/moviesApi";
+import { type Movie, fetchMovies } from "@/apis/moviesApi";
 
 export const useMovies = () => {
-  const [raw, setRaw] = useState<Movies[]>([]);
+  const [raw, setRaw] = useState<Movie[]>([]);
 
   const getMovies = async () => {
     const movies = await fetchMovies();
@@ -20,11 +20,17 @@ export const useMovies = () => {
     setRaw(data.sort((a, b) => a.year - b.year));
   };
 
+  const getMovieDetail = (id: string) => {
+    const movie = raw.find((data) => data.id === Number(id));
+    return movie;
+  };
+
   useEffect(() => {
     getMovies();
   }, []);
 
   return {
     raw,
+    getMovieDetail,
   };
 };
