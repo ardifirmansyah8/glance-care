@@ -16,9 +16,11 @@ export interface Movies {
   boxOffice: string;
   production: string;
   website: string;
+  oscarWins: number;
+  oscarNominations: number;
 }
 
-export const fetchMovies = async (): Promise<Movies> => {
+export const fetchMovies = async (): Promise<Movies[]> => {
   const response = await fetch("https://www.freetestapi.com/api/v1/movies");
   return await response.json();
 };
