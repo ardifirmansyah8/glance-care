@@ -34,3 +34,14 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## My Approach
+
+For this assignment, i created two pages, which is Home and Movies page. In the Home page there is four sections:
+
+1. Line chart to show how many movies that wins or nominated oscar based on year
+2. Hall of fames to show 3 movies that wins most oscar.
+3. Leaderboard to show movies that show how much that movie win and nominated at oscar.
+4. Pie chart to show top country and language that wins oscar.
+
+I just used custom hooks to store data, i think i don't need to use state management for this assignment.
