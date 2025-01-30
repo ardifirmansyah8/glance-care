@@ -35,26 +35,31 @@ export default function MovieDetail() {
 
   return (
     <>
-      <Link href={"/movies"} className="flex items-center gap-2 mb-4">
-        <ArrowLeft className="h-8 w-8" />
-        <Label className="text-xl">Back</Label>
+      <Link
+        href={"/movies"}
+        className="flex items-center gap-2 md:mb-4 mb-2 px-4 md:px-0"
+      >
+        <ArrowLeft className="md:h-8 md:w-8" />
+        <Label className="md:text-xl">Back</Label>
       </Link>
 
-      <div className="flex flex-col md:flex-row gap-8 mb-8">
+      <div className="flex flex-col md:flex-row gap-8 mb-8 px-4 md:px-0">
         <div className="flex-shrink-0">
           <Image
             src={detail?.poster || "https://fakeimg.pl/220x310/ffff00"}
             alt={detail?.title || ""}
             width={0}
             height={0}
-            className="rounded-lg shadow-lg w-56"
+            className="rounded-lg shadow-lg md:w-56 w-full"
           />
         </div>
 
         <div className="flex-grow flex flex-col gap-2">
-          <Label className="text-4xl font-bold">
+          <Label className="md:text-4xl text-2xl font-bold">
             {detail?.title}{" "}
-            <Label className="text-2xl text-gray-500">({detail?.year})</Label>
+            <Label className="md:text-2xl text-lg text-gray-500">
+              ({detail?.year})
+            </Label>
           </Label>
 
           <div className="flex flex-wrap gap-2 mb-2">
@@ -63,7 +68,7 @@ export default function MovieDetail() {
             ))}
           </div>
 
-          <div className="flex items-center gap-6 mb-4">
+          <div className="flex md:flex-row flex-col md:items-center md:gap-6 gap-2 mb-4">
             <div className="flex items-center gap-2">
               <Star className="text-yellow-500" />
               <Label className="font-bold">{detail?.rating}/10</Label>
@@ -93,7 +98,7 @@ export default function MovieDetail() {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4 md:px-0">
         <Card>
           <CardContent className="p-6 flex flex-col gap-4">
             <Label className="text-lg font-bold">Cast & Crew</Label>
@@ -141,14 +146,15 @@ export default function MovieDetail() {
               <div className="flex items-center gap-2">
                 <Globe className="text-gray-500" />
                 <Label>
-                  <strong>Website:</strong>{" "}
-                  <a
-                    className="text-blue-500"
-                    href={detail?.website}
-                    target="_blank"
-                  >
-                    {detail?.website}
-                  </a>
+                  <strong>
+                    <a
+                      className="text-blue-500"
+                      href={detail?.website}
+                      target="_blank"
+                    >
+                      Website
+                    </a>
+                  </strong>
                 </Label>
               </div>
             </div>

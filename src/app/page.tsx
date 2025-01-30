@@ -116,7 +116,7 @@ export default function HomePage() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Award className="h-5 w-5" />
-            <Label className="text-lg font-bold">
+            <Label className="md:text-lg font-bold">
               Oscar Nominations and Wins by Year
             </Label>
           </CardTitle>
@@ -126,7 +126,7 @@ export default function HomePage() {
             <ResponsiveContainer width="100%" height="100%">
               <LineChart
                 data={getOscarStats}
-                margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+                margin={{ top: 5, right: 10, left: 0, bottom: 5 }}
               >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="year" />
@@ -145,11 +145,11 @@ export default function HomePage() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Award className="h-5 w-5" />
-            <Label className="text-lg font-bold">Hall of Fames</Label>
+            <Label className="md:text-lg font-bold">Hall of Fames</Label>
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid md:grid-cols-3 grid-cols-1 gap-2">
             {getTopPerformer.slice(0, 3).map((movie) => (
               <Card key={movie.id} className="flex flex-col">
                 <Image
@@ -185,7 +185,7 @@ export default function HomePage() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Award className="h-5 w-5" />
-            <Label className="text-lg font-bold">Top Oscar Winners</Label>
+            <Label className="md:text-lg font-bold">Top Oscar Winners</Label>
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -227,14 +227,14 @@ export default function HomePage() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Award className="h-5 w-5" />
-            <Label className="text-lg font-bold">
+            <Label className="md:text-lg font-bold">
               Top Oscar By Country and Language
             </Label>
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="flex justify-between">
-            <div className="flex-1 h-80">
+          <div className="flex flex-col md:flex-row justify-between">
+            <div className="md:flex-1 w-full h-80">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie
@@ -255,7 +255,7 @@ export default function HomePage() {
                 </PieChart>
               </ResponsiveContainer>
             </div>
-            <div className="flex-1 h-80">
+            <div className="md:flex-1 w-full h-80">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie

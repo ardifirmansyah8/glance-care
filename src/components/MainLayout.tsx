@@ -21,37 +21,39 @@ export default function MainLayout({
   const pathname = usePathname();
 
   return (
-    <div className="bg-white w-2/3">
-      <div className="flex flex-col gap-4 pb-4">
-        <div className="flex items-center justify-between py-4">
-          <div className="text-3xl font-bold flex items-center gap-2">
-            <Trophy className="h-8 w-8 text-yellow-500" />
-            <Label className="text-2xl font-bold">Oscar Dashboard</Label>
+    <div className="bg-white md:w-2/3 w-full">
+      <div className="flex flex-col gap-4 md:pb-4 md:px-0 p-2">
+        <div className="flex items-center justify-between md:px-0 p-4">
+          <div className="flex items-center gap-2">
+            <Trophy className="md:h-8 md:w-8 text-yellow-500" />
+            <Label className="md:text-2xl text-lg font-bold">
+              Oscar Dashboard
+            </Label>
           </div>
 
           <NavigationMenu>
-            <NavigationMenuList className="gap-4">
+            <NavigationMenuList className="md:gap-4">
               <NavigationMenuItem
                 className={clsx(
-                  "px-4 py-3 hover:text-blue-400",
+                  "md:px-4 px-2 py-3 hover:text-blue-400",
                   pathname === "/" ? "text-blue-400" : ""
                 )}
               >
                 <Link href="/" legacyBehavior passHref>
                   <NavigationMenuLink>
-                    <Home className="h-8 w-8" />
+                    <Home className="md:h-8 md:w-8" />
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem
                 className={clsx(
-                  "px-4 py-3 hover:text-blue-400",
+                  "md:px-4 px-2 py-3 hover:text-blue-400",
                   pathname === "/movies" ? "text-blue-400" : ""
                 )}
               >
                 <Link href="/movies" legacyBehavior passHref>
                   <NavigationMenuLink>
-                    <Clapperboard className="h-8 w-8" />
+                    <Clapperboard className="md:h-8 md:w-8" />
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>

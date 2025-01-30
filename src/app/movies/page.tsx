@@ -13,11 +13,11 @@ export default function MoviesPage() {
 
   return (
     <>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 px-2 md:px-0">
         <Clapperboard className="h-5 w-5" />
         <Label className="text-xl font-bold">List Movies</Label>
       </div>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid md:grid-cols-3 grid-cols-1 md:gap-4 gap-2 px-2 md:px-0">
         {raw.map((movie) => (
           <Card key={movie.id} className="flex flex-col">
             <Image
